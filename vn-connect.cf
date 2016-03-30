@@ -1,0 +1,53 @@
+<pre>
+
+# $Id: vn-connect.cf,v 1.27 2015/02/06 01:14:49 fulford Exp $
+# $Source: /src/merlin/usr/local/etc/RCS/vn-connect.cf,v $
+# $Revision: 1.27 $
+# Author C W Fulford.
+# Copyright 2014 (c) C W Fulford.
+# Licensed for public use under the LGPL, .
+# For assistance contact fulford@fulford.net 0709 229 5385
+########################################################################
+emeriqa:
+	conn=vpn
+	vpn="/usr/sbin/pppd call emeriqa"
+	route="sudo /sbin/route add -net 192.168.0.0/24 ppp0"
+
+server-2:
+	conn=vpn
+	vpn="/usr/sbin/pppd call architects-gw"
+	route="sudo /sbin/route add -net 192.168.0.0/24 ppp0"
+
+dougal:
+	conn=internet
+
+caswallon:
+	conn=lan
+
+brian:
+	conn=vpn
+	network=192.168.16.0
+	vpn="/usr/sbin/pppd call brian-gw"
+	route="sudo /sbin/route add -net 192.168.16.0/24 ppp0"
+
+nh:
+	conn=vpn
+	network=10.0.2.0
+	vpn="/usr/sbin/pppd call nh-gw"
+	route="sudo /sbin/route add -net 10.0.2.0/24 ppp0"
+######################################################################
+# This program is free software: you can redistribute it and or      #
+# modify it under the terms of the Lesser GNU General Public License #
+# as published by the Free Software Foundation, either version 3 of  #
+# the License, or (at your option) any later version.                #
+#                                                                    #
+# This program is distributed in the hope that it will be useful,    #
+# but WITHOUT ANY WARRANTY; without even the implied warranty of     #    
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the      #
+# GNU General Public License for more details.                       #
+#                                                                    # 
+# A copy of the Lesser GNU General Public License and the GNU        #
+# General Public License is available at                             #
+# &#60;http://www.gnu.org/licenses/&#62;.                                    #
+######################################################################
+</pre>

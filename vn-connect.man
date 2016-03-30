@@ -1,0 +1,51 @@
+.TH VN-CONNECT 8l "8 July r
+.SH NAME
+.B vn-connect
+- start a virtual network connection to remote host.
+.SH SYNOPSIS
+\fBvn-connect\fR [\fB-c \fI<config_file>\fR] [\fB-d\fR] [\fB-v\fR] 
+\fI<hostid>\fR
+.SH AVAILABILITY
+.B vn-connect
+is a Bourne/Bash shell script which should work equally well on all versions of UNIX
+and Linux.
+.SH DESCRIPTION
+The script is designed to be used in support of other utilities such as
+.IR rhost.
+The <\fIhostid\fR> is used as the key to look up the connection method
+and other parameters in the configuration file which are used to make
+the necessary vn-connection (usually a VPN) either directly to the target host
+or to a nominated gateway.
+.SH OPTIONS
+.TP 5
+\fB-c \fI<configuration_file>\fR
+Use the named configuration file in preference to the default "
+\fI/usr/local/etc/vn-connect.cf\fR".
+.TP 5
+\fB-d\fR
+Set debug mode on. Debug mode uses the \fB-x\fR mode to echo each command
+to \fIstandard error\fR before it is executed.
+.TP 5
+\fB-v\fR
+Sets verbose mode. Significant actions are reported to \fIstandard error\fR.
+.SH EXAMPLES
+.IP
+.nf
+.ft CW
+vn-connect la1 
+.fi
+.ft R
+.LP
+Look up "la1" in the configuration file. If found and a VPN is required
+use the other parameters found in the "la1" stanza to start a virtual
+network connection the host or the indicated gateway. Set the route if 
+required.
+.SH FILES
+.IR vn-connect.cf .
+
+.SH BUGS
+The script has very little input error checking.
+.SH SEE ALSO
+.IR rhost .
+.SH AUTHOR
+Clifford W Fulford, City Linux. Contact fulford@fulford.net or +44 (0)709 229 5385.

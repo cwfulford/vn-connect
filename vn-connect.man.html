@@ -1,0 +1,103 @@
+<h2 id="heading1">NAME</h2>
+<p class="indent">
+<b><a href="./scripts.php?script=vn-connect">vn-connect</a></b>
+- start a virtual network connection to remote host.
+</p>
+<h2 id="heading2">SYNOPSIS</h2>
+<p class="indent">
+
+<b><a href="./scripts.php?script=vn-connect">vn-connect</a></b>
+ [
+<b>-c </b>
+<i>&lt;config_file&gt;</i>
+] [
+<b>-d</b>
+] [
+<b>-v</b>
+] 
+
+<i>&lt;hostid&gt;</i>
+
+</p>
+<h2 id="heading3">AVAILABILITY</h2>
+<p class="indent">
+<b><a href="./scripts.php?script=vn-connect">vn-connect</a></b>
+is a Bourne/Bash shell script which should work equally well on all versions of UNIX
+and Linux.
+</p>
+<h2 id="heading4">DESCRIPTION</h2>
+<p class="indent">
+The script is designed to be used in support of other utilities such as
+.IR rhost.
+The &lt;
+<i>hostid</i>
+&gt; is used as the key to look up the connection method
+and other parameters in the configuration file which are used to make
+the necessary <a href="./scripts.php?script=vn-connect">vn-connect</a>ion (usually a VPN) either directly to the target host
+or to a nominated gateway.
+</p>
+<h2 id="heading5">OPTIONS</h2>
+<p class="indent">
+</p>
+<p class="indent">
+
+<b>-c </b>
+<i>&lt;configuration_file&gt;</i>
+
+Use the named configuration file in preference to the default "
+
+<i>/usr/local/etc/<a href="./scripts.php?script=vn-connect.cf">vn-connect.cf</a></i>
+".
+</p>
+<p class="indent">
+
+<b>-d</b>&nbsp;&nbsp;&nbsp;
+
+Set debug mode on. Debug mode uses the 
+<b>-x</b>&nbsp;&nbsp;&nbsp;
+ mode to echo each command
+to 
+<i>standard error</i>
+ before it is executed.
+</p>
+<p class="indent">
+
+<b>-v</b>&nbsp;&nbsp;&nbsp;
+
+Sets verbose mode. Significant actions are reported to 
+<i>standard error</i>
+.
+</p>
+<h2 id="heading6">EXAMPLES</h2>
+<p class="indent">
+
+</p><div class="cmdline">
+<pre>
+vn-connect la1 
+</pre></div>
+<p class="indent">
+</p>
+<p class="indent">
+Look up "la1" in the configuration file. If found and a VPN is required
+use the other parameters found in the "la1" stanza to start a virtual
+network connection the host or the indicated gateway. Set the route if 
+required.
+</p>
+<h2 id="heading7">FILES</h2>
+<p class="indent">
+<i><a href="./scripts.php?script=vn-connect.cf">vn-connect.cf</a></i>.
+
+</p>
+<h2 id="heading8">BUGS</h2>
+<p class="indent">
+The script has very little input error checking.
+</p>
+<h2 id="heading9">SEE ALSO</h2>
+<p class="indent">
+<a href="./scripts.php?script=rhost&man=y"><i>rhost</i>.</a>
+</p>
+<h2 id="heading10">AUTHOR</h2>
+<p class="indent">
+Clifford W Fulford, City Linux. Contact fulford@fulford.net or +44 (0)709 229 5385.
+</p>
+	
